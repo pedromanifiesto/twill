@@ -132,12 +132,12 @@ class User extends AuthenticatableContract
 
     public function sendWelcomeNotification($token)
     {
-        $this->notifyWithCustomMarkdownTheme(new WelcomeNotification($token));
+        $this->notifyWithCustomMarkdownTheme(app()->make(config('twill.notifications.welcome'), ['token' => $token]));
     }
 
     public function sendPasswordResetNotification($token)
     {
-        $this->notifyWithCustomMarkdownTheme(new ResetNotification($token));
+        $this->notifyWithCustomMarkdownTheme(app()->make(config('twill.notifications.reset'), ['token' => $token]));
     }
 
     public function isSuperAdmin()
