@@ -424,7 +424,7 @@ trait HandleRepeaters
                     );
                 } else {
                     foreach ($relatedItemFormFields['medias'] as $key => $values) {
-                        $repeatersMedias["blocks[$relation-$relationItem->id][$key]"] = $values;
+                        $repeatersMedias["blocks[$relation-$pivotRowId][$key]"] = $values;
                     }
                 }
             }
