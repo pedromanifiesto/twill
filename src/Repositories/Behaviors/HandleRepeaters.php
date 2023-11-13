@@ -251,10 +251,10 @@ trait HandleRepeaters
             }
         }
 
-        $current = $object->{$relation}()->get();
+        $current = $object->{$relation}()->withPivot('id')->get();
         if ($current->isNotEmpty()) {
             foreach ($current as $existingRelation) {
-                if (! in_array((int)$existingRelation->id, $currentIdList, true)) {
+                if (! in_array((int)$existingRelation->pivot->id, $currentIdList, true)) {
                     $object->{$relation}()->detach($existingRelation->id);
                 }
             }
