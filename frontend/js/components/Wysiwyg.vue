@@ -416,6 +416,10 @@
       @include font-regular;
     }
 
+    .ql-container { 
+      height: unset;
+    }
+
     .ql-container.ql-snow {
       border-bottom-left-radius: 2px;
       border-bottom-right-radius: 2px;
@@ -424,6 +428,7 @@
     .ql-editor {
       background-color: $color__f--bg;
       min-height: 15px * 6;
+      height: unset;
       caret-color: $color__action;
       color: $color__text--forms;
       overflow: visible;
